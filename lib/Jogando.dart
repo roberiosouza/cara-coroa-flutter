@@ -15,7 +15,7 @@ class _JogandoState extends State<Jogando> {
 
   String _sortear() {
     var moedas = ['images/moeda_cara.png', 'images/moeda_coroa.png'];
-    _moeda = moedas[Random().nextInt(2)];
+    _moeda = moedas[Random().nextInt(moedas.length)];
 
     return _moeda!;
   }
@@ -38,8 +38,7 @@ class _JogandoState extends State<Jogando> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                      Navigator.pop(context);
                     },
                     child: Image.asset("images/botao_voltar.png"),
                   )
